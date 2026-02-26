@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akul Dalmia | Resume & Certifications</title>
+
+  <!-- Simple Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-light: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #020617;
+      --border: #1f2937;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 50%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 32px;
+      align-items: center;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(15,23,42,0.9));
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.85);
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--muted);
+      background-color: rgba(15,23,42,0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border-color: var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-right {
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: radial-gradient(circle at top, var(--accent-soft), rgba(15,23,42,0.98));
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: grid;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .hero-right-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .hero-right-label {
+      color: var(--muted);
+    }
+
+    .hero-right-value {
+      font-weight: 500;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #022c22;
+      color: #6ee7b7;
+      border: 1px solid #064e3b;
+    }
+
+    /* Sections */
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      width: 6px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 14px;
+      background: linear-gradient(135deg, #020617, #020617);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+    }
+
+    .card + .card {
+      margin-top: 10px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .card-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .card-list {
+      font-size: 0.85rem;
+      color: var(--muted);
+      list-style: disc;
+      padding-left: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Certifications */
+
+    .cert-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.85rem;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #020617;
+      border: 1px solid var(--border);
+    }
+
+    .cert-name {
+      font-weight: 500;
+    }
+
+    .cert-org {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .cert-meta {
+      text-align: right;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
+
+    .contact-pill {
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #111827;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .section-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">AKUL DALMIA</div>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-title">Technical Analyst & CA Finalist</div>
+        <div class="hero-sub">
+          I work at Felix Advisory on internal audit and process risk projects and actively apply multi‑instrument technical analysis to equity and F&O markets.
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">Technical Analysis</span>
+          <span class="tag">Process Risk Advisory</span>
+          <span class="tag">Internal Audit</span>
+          <span class="tag">Data Visualisation</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">
+            Download CV
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            Contact me
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-right-row">
+          <div>
+            <div class="hero-right-label">Current role</div>
+            <div class="hero-right-value">Analyst, Felix Advisory</div>
+          </div>
+          <div class="badge">Open to roles</div>
+        </div>
+        <div class="hero-right-row">
+          <div>
+            <div class="hero-right-label">Focus</div>
+            <div class="hero-right-value">Equity research, TA, risk & audit</div>
+          </div>
+          <div>
+            <div class="hero-right-label">Location</div>
+            <div class="hero-right-value">Jaipur, Rajasthan (India)</div>
+          </div>
+        </div>
+        <div class="hero-right-row">
+          <div>
+            <div class="hero-right-label">Email</div>
+            <div class="hero-right-value">akul.dalmia@example.com</div>
+          </div>
+          <div>
+            <div class="hero-right-label">LinkedIn</div>
+            <div class="hero-right-value">
+              <a href="https://www.linkedin.com/in/akul-dalmia" target="_blank">linkedin.com/in/akul-dalmia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + EXPERIENCE + SKILLS -->
+    <section id="experience">
+      <div class="section-title">
+        <span></span> Experience & Skills
+      </div>
+
+      <div class="section-grid">
+        <!-- Experience -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Analyst – Process Risk Advisory & Internal Audit</div>
+              <div class="card-meta">Felix Advisory · 20XX – Present · Jaipur</div>
+            </div>
+            <div class="card-sub">
+              Working on internal audit, risk reviews and data‑driven insights for clients in banking and other sectors.
+            </div>
+            <ul class="card-list">
+              <li>Performed end‑to‑end process walkthroughs and control testing for key business cycles (P2P, O2C, treasury).</li>
+              <li>Analysed bank statements and financial data to identify exceptions, trends and red‑flags.</li>
+              <li>Prepared audit working papers, risk registers and issue trackers for management reporting.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Technical Analyst – Equities & F&O</div>
+              <div class="card-meta">Independent · 20XX – Present · Remote</div>
+            </div>
+            <div class="card-sub">
+              Multi‑timeframe technical analysis across indices, stocks and other instruments with focus on risk‑managed trading.
+            </div>
+            <ul class="card-list">
+              <li>Built trading frameworks using price action, structure, volume and key indicators.</li>
+              <li>Created high‑clarity charts and trade reviews for LinkedIn and internal documentation.</li>
+              <li>Tracked performance using spreadsheets and dashboards, focusing on risk‑reward and drawdown.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Core skills</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Technical Analysis (Price action, S/R, Volume)</span>
+              <span class="chip">Equity & F&O markets</span>
+              <span class="chip">Internal Audit</span>
+              <span class="chip">Process mapping & controls</span>
+              <span class="chip">Risk & compliance</span>
+              <span class="chip">Financial statement review</span>
+              <span class="chip">Bank statement analysis</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Tools</div>
+            </div>
+            <div class="chips">
+              <span class="chip">Excel / Google Sheets</span>
+              <span class="chip">PowerPoint</span>
+              <span class="chip">TradingView / charting platforms</span>
+              <span class="chip">Screener.in, financial data sites</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="section-title">
+        <span></span> Certifications & Education
+      </div>
+
+      <div class="section-grid">
+        <!-- Certifications list -->
+        <div>
+          <div class="cert-list">
+            <div class="cert-item">
+              <div>
+                <div class="cert-name">Chartered Accountancy – Final</div>
+                <div class="cert-org">ICAI · CA Finalist</div>
+              </div>
+              <div class="cert-meta">
+                Status: Awaiting results
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education card -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Education</div>
+            </div>
+            <ul class="card-list">
+              <li>B.Com – Rajasthan University, Jaipur</li>
+              <li>CA Intermediate & Foundation – ICAI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-title">
+        <span></span> Selected work & projects
+      </div>
+      <div class="section-grid">
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">LinkedIn Technical Analysis Content</div>
+              <div class="card-meta">Ongoing</div>
+            </div>
+            <div class="card-sub">
+              Consistently publishing data‑driven charts and market commentary to build a transparent trading journal and professional brand.
+            </div>
+            <ul class="card-list">
+              <li>Prepared structured trade breakdowns (setup, entry, SL, targets, review).</li>
+              <li>Used clear visual design for charts to communicate bias and risk levels.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <span></span> Contact
+      </div>
+
+      <div class="card">
+        <div class="contact-row">
+          <div class="contact-pill">
+            <strong>Email:</strong> akul.dalmia@example.com
+          </div>
+          <div class="contact-pill">
+            <strong>Location:</strong> Jaipur, Rajasthan, India
+          </div>
+          <div class="contact-pill">
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/akul-dalmia" target="_blank">linkedin.com/in/akul-dalmia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Akul Dalmia. All rights reserved.</div>
+      <div><a href="#top">Back to top ↑</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
